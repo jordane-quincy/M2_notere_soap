@@ -10,11 +10,11 @@ public interface BankServiceItf {
 
 	String toPrint(@WebParam(name = "toPrint") String toPrint);
 	
-	String debit(@WebParam(name = "idCompteADebiter") String idCompteADebiter,
-			@WebParam(name = "montant") String montant
-			);
+//	String debit(@WebParam(name = "idCompteADebiter") String idCompteADebiter,
+//			@WebParam(name = "montant") String montant
+//			);
 
-	String remboursement(@WebParam(name = "idCompteACrediter") String idCompteACrediter,
-			@WebParam(name = "montant") String montant
-			);
+//	String remboursement(@WebParam(name = "idCompteACrediter") String idCompteACrediter,
+//			@WebParam(name = "montant") String montant
+//			);
 }

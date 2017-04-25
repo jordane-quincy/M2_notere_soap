@@ -1,4 +1,4 @@
-<xs:schema xmlns:tns="http://com.github.jordane_quincy" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://com.github.jordane_quincy" version="1.0">
+<xs:schema xmlns:tns="http://com.github.jordane_quincy" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://com.github.jordane_quincy" version="1.0">
 
   <xs:element name="toPrint" type="tns:toPrint"/>
 

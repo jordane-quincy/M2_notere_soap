@@ -1,0 +1,128 @@
+!SESSION 2017-04-24 09:44:52.434 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -data C:\Users\Jordane\Documents\GitHub\M2_ProgrammationParComposant\TP\TpIntergicielSpring -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-04-24 09:45:02.161
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Jordane'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.jboss.tools.central 4 0 2017-04-24 09:45:10.548
+!MESSAGE Unable to open C:\Users\Jordane\Downloads\eclipse-jee-neon-R-win32-x86_64\eclipse\plugins\org.jboss.tools.central_2.1.1.v20160808-1619\resources\jbosstools-central-webpage.zip
+!STACK 0
+java.io.IOException: C:\Users\Jordane\Documents\GitHub\M2_ProgrammationParComposant\TP\TpIntergicielSpring\.metadata\.plugins\org.jboss.tools.central\central\dff8cd5\index.html can not be found
+	at org.jboss.tools.central.internal.CentralHelper.extractIfNeeded(CentralHelper.java:203)
+	at org.jboss.tools.central.internal.CentralHelper.getCentralPageUrl(CentralHelper.java:122)
+	at org.jboss.tools.central.internal.CentralHelper.getCentralUrl(CentralHelper.java:60)
+	at org.jboss.tools.central.editors.GettingStartedHtmlPage$5.run(GettingStartedHtmlPage.java:252)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.jboss.tools.foundation.core 8 0 2017-04-24 09:45:10.668
+!MESSAGE Operation canceled
+
+!ENTRY org.jboss.tools.project.examples 2 0 2017-04-24 09:45:10.697
+!MESSAGE Invalid URL: http://download.jboss.org/jbosstools/examples/4/4/project-examples-category.xml
+!SESSION 2017-04-24 09:46:54.748 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-04-24 09:47:11.699
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Jordane'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.mylyn.discovery.core 4 0 2017-04-24 09:47:23.462
+!MESSAGE Unexpected error
+!STACK 0
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.mylyn.internal.discovery.core.util.P2TransportService.download(P2TransportService.java:86)
+	at org.eclipse.mylyn.internal.discovery.core.util.WebUtil.download(WebUtil.java:157)
+	at org.eclipse.mylyn.internal.discovery.core.util.WebUtil.download(WebUtil.java:66)
+	at org.jboss.tools.discovery.core.internal.connectors.xpl.RemoteExternalBundleDiscoveryStrategy$DownloadBundleJob.call(RemoteExternalBundleDiscoveryStrategy.java:223)
+	at org.jboss.tools.discovery.core.internal.connectors.xpl.RemoteExternalBundleDiscoveryStrategy$DownloadBundleJob.call(RemoteExternalBundleDiscoveryStrategy.java:1)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.mylyn.internal.discovery.core.util.P2TransportService.download(P2TransportService.java:84)
+	... 8 more
+Caused by: org.eclipse.core.runtime.OperationCanceledException
+	at org.eclipse.core.internal.jobs.JobManager.join(JobManager.java:999)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:359)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:101)
+	at org.eclipse.oomph.p2.internal.core.CachingTransport.download(CachingTransport.java:126)
+	at org.eclipse.oomph.p2.internal.core.CachingTransport.download(CachingTransport.java:238)
+	... 13 more
+
+!ENTRY org.eclipse.mylyn.discovery.core 4 0 2017-04-24 09:47:23.501
+!MESSAGE Unexpected error
+!STACK 0
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.mylyn.internal.discovery.core.util.P2TransportService.download(P2TransportService.java:86)
+	at org.eclipse.mylyn.internal.discovery.core.util.WebUtil.download(WebUtil.java:157)
+	at org.eclipse.mylyn.internal.discovery.core.util.WebUtil.download(WebUtil.java:66)
+	at org.jboss.tools.discovery.core.internal.connectors.xpl.RemoteExternalBundleDiscoveryStrategy$DownloadBundleJob.call(RemoteExternalBundleDiscoveryStrategy.java:223)
+	at org.jboss.tools.discovery.core.internal.connectors.xpl.RemoteExternalBundleDiscoveryStrategy$DownloadBundleJob.call(RemoteExternalBundleDiscoveryStrategy.java:1)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.mylyn.internal.discovery.core.util.P2TransportService.download(P2TransportService.java:84)
+	... 8 more
+Caused by: org.eclipse.core.runtime.OperationCanceledException
+	at org.eclipse.core.internal.jobs.JobManager.join(JobManager.java:999)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:359)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:101)
+	at org.eclipse.oomph.p2.internal.core.CachingTransport.download(CachingTransport.java:126)
+	at org.eclipse.oomph.p2.internal.core.CachingTransport.download(CachingTransport.java:238)
+	... 13 more
+
+!ENTRY org.eclipse.mylyn.discovery.core 4 0 2017-04-24 09:47:23.544
+!MESSAGE Unexpected error
+!STACK 0
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.mylyn.internal.discovery.core.util.P2TransportService.download(P2TransportService.java:86)
+	at org.eclipse.mylyn.internal.discovery.core.util.WebUtil.download(WebUtil.java:157)
+	at org.eclipse.mylyn.internal.discovery.core.util.WebUtil.download(WebUtil.java:66)
+	at org.jboss.tools.discovery.core.internal.connectors.xpl.RemoteExternalBundleDiscoveryStrategy$DownloadBundleJob.call(RemoteExternalBundleDiscoveryStrategy.java:223)
+	at org.jboss.tools.discovery.core.internal.connectors.xpl.RemoteExternalBundleDiscoveryStrategy$DownloadBundleJob.call(RemoteExternalBundleDiscoveryStrategy.java:1)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.mylyn.internal.discovery.core.util.P2TransportService.download(P2TransportService.java:84)
+	... 8 more
+Caused by: org.eclipse.core.runtime.OperationCanceledException
+	at org.eclipse.core.internal.jobs.JobManager.join(JobManager.java:999)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:359)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:101)
+	at org.eclipse.oomph.p2.internal.core.CachingTransport.download(CachingTransport.java:126)
+	at org.eclipse.oomph.p2.internal.core.CachingTransport.download(CachingTransport.java:238)
+	... 13 more

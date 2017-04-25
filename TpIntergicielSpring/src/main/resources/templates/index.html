@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Acceuil</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Acceuil</h1>
+    <ul>
+    	<li><a href="init">Cliquer ici pour initialiser</a></li>
+    	<li><a href="login">Se connecter</a></li>
+    </ul>
+   	<div th:if="${nomPrenomClient != null}">
+        <h1 th:inline="text">Bonjour [[${role}]][[${nomPrenomClient}]]</h1>
+    	<ul><li><a href="getCompteClient">Vos comptes</a></li></ul>
+    	<a th:unless="${#strings.isEmpty(role)}" href="/admin" >Administration</a>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Liste compte client</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div th:if="${comptes != null}">
+		<h1>Vos comptes :</h1>
+		<ul>
+			<li th:each="compte : ${comptes}" th:id="${compte.id}" class="compte" th:text="' ('+ ${#strings.substringAfter(compte.class.name,'.')} + ') Solde : '+ ${compte.solde} ">
+			</li>
+		</ul>
+		<form th:action="@{/operationSurCompte}" method="post">
+			<h2>Opération :</h2>
+			<select name="compteId">
+				<option th:each="compte : ${comptes}" th:value="${compte.id}" th:text="' ('+ ${#strings.substringAfter(compte.class.name,'.')} + ') Solde : '+ ${compte.solde} "></option>
+			</select>
+			<select name="typeOperation">
+				<option value="debit">Débit</option>
+				<option value="credit">Crédit</option>
+				<option value="pret">Prêt</option>
+			</select>
+			<label for="montant">Montant</label><input name="montant" type="number" min="0" value="1"/>
+			<input type="submit" value="Valider"/>
+		</form>
+	</div>
+	<a href="/">Acceuil</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+#Lancer la bdd 
+cd /home/jordane/Téléchargements/hsqldb-2.3.4/hsqldb/bin
+start java -cp ./lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:mydb --dbname.0 xdb
+
+#Lancer la java application : Application.java
+
+#Aller sur l'url :
+http://localhost:8080/
+
+#Maintenant c'est fait dans le @PostConstruct automatiquement
+##Initialiser la base de données via le premier lien disponible sur la page d'acceuil (http://localhost:8080/init)
+
+#Se connecter via le lien disponible sur la page d'acceuil (http://localhost:8080/login)
+User name : JQuincy
+Password : password
+	Cet utilisateur dispose d'un CompteCourant avec un solde de 500 (découvert de 4 000)
+		et d'un CompteEpargne avec un solde de 10 000
+	
+User name : oR
+Password : toor
+	Cet utilisateur dispose uniquement d'un CompteEpargne avec un solde de 300 000
+
+#La consultation et les opérations sont accessible via le lien "Vos comptes" (http://localhost:8080/getCompteClient)
+
+

@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Liste des utilisateurs</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div th:if="${clients != null}">
+		<h1>Liste des utilisateurs :</h1>
+		<ul>
+			<li th:each="client : ${clients}" th:id="${client.id}" th:text="${client.nom} +' '+ ${client.prenom} "></li>
+		</ul>
+	</div>
+	
+	<a href="/">Acceuil</a>
+</body>
+</html>

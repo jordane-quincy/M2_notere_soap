@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="19f6e3e8-047b-4b91-bdca-b5a7f989819b" activeEnvironment="Default" name="m2_notere_soap" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="fc2571b2-1a38-4a70-affa-89bdcc79fe40" wsaVersion="NONE" name="BankServiceSoapBinding" type="wsdl" bindingName="{http://com.github.jordane_quincy}BankServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/m2_notere_soap/services/BankServiceItf?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/m2_notere_soap/services/BankServiceItf?wsdl"><con:part><con:url>http://localhost:8080/m2_notere_soap/services/BankServiceItf?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="BankService" targetNamespace="http://com.github.jordane_quincy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://com.github.jordane_quincy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://com.github.jordane_quincy" schemaLocation="http://localhost:8080/m2_notere_soap/services/BankServiceItf?xsd=bankserviceimpl_schema1.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="toPrint">
+    <wsdl:part element="tns:toPrint" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="toPrintResponse">
+    <wsdl:part element="tns:toPrintResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="BankServiceItf">
+    <wsdl:operation name="toPrint">
+      <wsdl:input message="tns:toPrint" name="toPrint"></wsdl:input>
+      <wsdl:output message="tns:toPrintResponse" name="toPrintResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BankServiceSoapBinding" type="tns:BankServiceItf">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="toPrint">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="toPrint">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="toPrintResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BankService">
+    <wsdl:port binding="tns:BankServiceSoapBinding" name="BankServiceItf">
+      <soap:address location="http://localhost:8080/m2_notere_soap/services/BankServiceItf"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/m2_notere_soap/services/BankServiceItf?xsd=bankserviceimpl_schema1.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://com.github.jordane_quincy" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://com.github.jordane_quincy">
+  <xs:element name="toPrint" type="tns:toPrint"/>
+  <xs:element name="toPrintResponse" type="tns:toPrintResponse"/>
+  <xs:complexType name="toPrint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="toPrint" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="toPrintResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/m2_notere_soap/services/BankServiceItf</con:endpoint></con:endpoints><con:operation id="f0e89136-4404-4c86-88c2-4332454d8fa4" isOneWay="false" action="" name="toPrint" bindingOperationName="toPrint" type="Request-Response" outputName="toPrintResponse" inputName="toPrint" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7fc7af3f-c6c5-442e-883d-01291ccdf478" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/m2_notere_soap/services/BankServiceItf</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com.github.jordane_quincy">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:toPrint>\r
+         <!--Optional:-->\r
+         <toPrint>test</toPrint>\r
+      </com:toPrint>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://com.github.jordane_quincy/BankServiceItf/toPrint"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

@@ -1,0 +1,45 @@
+package main;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.transform.stream.StreamSource;
+
+import org.eclipse.persistence.jaxb.JAXBContextFactory;
+import org.eclipse.persistence.jaxb.MarshallerProperties;
+
+import entity.HistoriqueOperations;
+
+public class MainJson {
+
+	public static void main(String[] args) throws JAXBException, IOException {
+		String uri = "http://localhost:8080/RESTful/ resources/test/listjson";
+		URL url = new URL(uri);
+		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+		connection.setRequestMethod("GET");
+		connection.setRequestProperty("Accept", "application/json");
+
+		Map<String, Object> properties = new HashMap<String, Object>();
+		properties.put("eclipselink.media - type", "application/json");
+		properties.put(MarshallerProperties.JSON_INCLUDE_ROOT, false);
+		
+		JAXBContext ctx = JAXBContextFactory.createContext(new Class[] { HistoriqueOperations.class }, properties);
+		Unmarshaller jsonUnmarshaller = ctx.createUnmarshaller();
+		StreamSource jsonStream2 = new StreamSource(connection.getInputStream());
+		@SuppressWarnings("unchecked")
+		List<HistoriqueOperations> lstHisto = (List<HistoriqueOperations>) jsonUnmarshaller
+				.unmarshal(jsonStream2, HistoriqueOperations.class).getValue();
+		connection.disconnect();
+		for (HistoriqueOperations historique : lstHisto) {
+			System.out.println(historique);
+		}
+	}
+
+}

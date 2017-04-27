@@ -7655,3 +7655,498 @@ java.lang.NullPointerException
 	at org.eclipse.jst.jee.ui.internal.navigator.Web25ContentProvider.getNewContentProviderInstance(Web25ContentProvider.java:69)
 	at org.eclipse.jst.jee.ui.internal.navigator.LoadingJeeDDJob.run(LoadingJeeDDJob.java:50)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.core.jobs 4 2 2017-04-27 14:49:12.603
+!MESSAGE An internal error occurred during: "Loading descriptor for m2_notere_soap.".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jst.jee.model.internal.common.AbstractMergedModelProvider.getLastModificationTimeOfDDFile(AbstractMergedModelProvider.java:238)
+	at org.eclipse.jst.jee.model.internal.common.AbstractMergedModelProvider.hasToReloadModel(AbstractMergedModelProvider.java:229)
+	at org.eclipse.jst.jee.model.internal.common.AbstractMergedModelProvider.getMergedModel(AbstractMergedModelProvider.java:218)
+	at org.eclipse.jst.jee.model.internal.common.AbstractMergedModelProvider.getModelObject(AbstractMergedModelProvider.java:139)
+	at org.eclipse.jst.jee.ui.internal.navigator.Web25ContentProvider.getNewContentProviderInstance(Web25ContentProvider.java:69)
+	at org.eclipse.jst.jee.ui.internal.navigator.LoadingJeeDDJob.run(LoadingJeeDDJob.java:50)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-27 14:53:00.554
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-27 14:53:00.564
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+!SESSION 2017-04-27 14:53:19.722 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -clean -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.epp.mpc.core 4 0 2017-04-27 14:55:30.747
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.epp.mpc.core [344]
+  Unresolved requirement: Require-Bundle: org.eclipse.userstorage; bundle-version="[1.0.0,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.userstorage; bundle-version="1.0.1.v20170201-1648"; singleton:="true"
+       org.eclipse.userstorage [863]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.epp.mpc.core [osgi.identity; osgi.identity="org.eclipse.epp.mpc.core"; type="osgi.bundle"; version:Version="1.5.4.v20170222-1921"; singleton:="true"] because it is exposed to package 'org.apache.http.auth' from resources org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.5.2.v20161115-1643"] and org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.3.6.v201511171540"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.epp.mpc.core [osgi.identity; osgi.identity="org.eclipse.epp.mpc.core"; type="osgi.bundle"; version:Version="1.5.4.v20170222-1921"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.apache.http.auth)(version>=4.3.0))
+     |
+    export: osgi.wiring.package: org.apache.http.auth
+  org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.5.2.v20161115-1643"]
+
+Chain 2:
+  org.eclipse.epp.mpc.core [osgi.identity; osgi.identity="org.eclipse.epp.mpc.core"; type="osgi.bundle"; version:Version="1.5.4.v20170222-1921"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.apache.http.client.fluent)(version>=4.3.0))
+     |
+    export: osgi.wiring.package: org.apache.http.client.fluent; uses:=org.apache.http.auth
+    export: osgi.wiring.package=org.apache.http.auth
+  org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.3.6.v201511171540"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1620)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1599)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1571)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1514)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.epp.mpc.ui 4 0 2017-04-27 14:55:30.800
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.epp.mpc.ui [346]
+  Unresolved requirement: Require-Bundle: org.eclipse.userstorage; bundle-version="[1.0.0,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.userstorage; bundle-version="1.0.1.v20170201-1648"; singleton:="true"
+       org.eclipse.userstorage [863]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.userstorage.ui; bundle-version="[1.0.0,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.userstorage.ui; bundle-version="1.0.1.v20170201-1648"; singleton:="true"
+       org.eclipse.userstorage.ui [864]
+         Unresolved requirement: Require-Bundle: org.eclipse.userstorage; bundle-version="[1.0.0,2.0.0)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.eclipse.userstorage; bundle-version="1.0.1.v20170201-1648"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.epp.mpc.core; bundle-version="1.5.4"
+    -> Bundle-SymbolicName: org.eclipse.epp.mpc.core; bundle-version="1.5.4.v20170222-1921"; singleton:="true"
+       org.eclipse.epp.mpc.core [344]
+         Unresolved requirement: Require-Bundle: org.eclipse.userstorage; bundle-version="[1.0.0,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.userstorage; bundle-version="1.0.1.v20170201-1648"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.epp.mpc.core [osgi.identity; osgi.identity="org.eclipse.epp.mpc.core"; type="osgi.bundle"; version:Version="1.5.4.v20170222-1921"; singleton:="true"] because it is exposed to package 'org.apache.http.auth' from resources org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.5.2.v20161115-1643"] and org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.3.6.v201511171540"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.epp.mpc.core [osgi.identity; osgi.identity="org.eclipse.epp.mpc.core"; type="osgi.bundle"; version:Version="1.5.4.v20170222-1921"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.apache.http.auth)(version>=4.3.0))
+     |
+    export: osgi.wiring.package: org.apache.http.auth
+  org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.5.2.v20161115-1643"]
+
+Chain 2:
+  org.eclipse.epp.mpc.core [osgi.identity; osgi.identity="org.eclipse.epp.mpc.core"; type="osgi.bundle"; version:Version="1.5.4.v20170222-1921"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.apache.http.client.fluent)(version>=4.3.0))
+     |
+    export: osgi.wiring.package: org.apache.http.client.fluent; uses:=org.apache.http.auth
+    export: osgi.wiring.package=org.apache.http.auth
+  org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.3.6.v201511171540"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1620)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1599)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1571)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1514)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.oomph.setup.editor 4 0 2017-04-27 14:55:30.884
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.oomph.setup.editor [703]
+  Unresolved requirement: Require-Bundle: org.eclipse.oomph.setup.ui; bundle-version="[1.7.0,2.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.oomph.setup.ui; bundle-version="1.7.0.v20170305-1123"; singleton:="true"
+       org.eclipse.oomph.setup.ui [707]
+         Unresolved requirement: Require-Bundle: org.eclipse.oomph.setup.sync; bundle-version="[1.7.0,2.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.oomph.setup.sync; bundle-version="1.7.0.v20170201-1631"; singleton:="true"
+              org.eclipse.oomph.setup.sync [706]
+                Unresolved requirement: Require-Bundle: org.eclipse.userstorage; bundle-version="[1.0.0,2.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.userstorage; bundle-version="1.0.1.v20170201-1648"; singleton:="true"
+                     org.eclipse.userstorage [863]
+                       No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.userstorage.ui; bundle-version="[1.0.0,2.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.userstorage.ui; bundle-version="1.0.1.v20170201-1648"; singleton:="true"
+              org.eclipse.userstorage.ui [864]
+                Unresolved requirement: Require-Bundle: org.eclipse.userstorage; bundle-version="[1.0.0,2.0.0)"; visibility:="reexport"
+                  -> Bundle-SymbolicName: org.eclipse.userstorage; bundle-version="1.0.1.v20170201-1648"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.oomph.setup.sync; bundle-version="[1.7.0,2.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.oomph.setup.sync; bundle-version="1.7.0.v20170201-1631"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.userstorage.ui [osgi.identity; osgi.identity="org.eclipse.userstorage.ui"; type="osgi.bundle"; version:Version="1.0.1.v20170201-1648"; singleton:="true"] because it is exposed to package 'org.apache.http' from resources org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"] and org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.userstorage.ui [osgi.identity; osgi.identity="org.eclipse.userstorage.ui"; type="osgi.bundle"; version:Version="1.0.1.v20170201-1648"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.httpcomponents.httpcore)(&(bundle-version>=4.0.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.apache.httpcomponents.httpcore
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"]
+
+Chain 2:
+  org.eclipse.userstorage.ui [osgi.identity; osgi.identity="org.eclipse.userstorage.ui"; type="osgi.bundle"; version:Version="1.0.1.v20170201-1648"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.httpcomponents.httpclient)(&(bundle-version>=4.0.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.6.v201511171540"; osgi.wiring.bundle="org.apache.httpcomponents.httpclient"
+  org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.3.6.v201511171540"]
+    import: (&(osgi.wiring.package=org.apache.http.protocol)(version>=4.3.3))
+     |
+    export: osgi.wiring.package: org.apache.http.protocol; uses:=org.apache.http
+    export: osgi.wiring.package=org.apache.http
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1620)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1599)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1571)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1514)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.oomph.setup.sync 4 0 2017-04-27 14:55:30.894
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.oomph.setup.sync [706]
+  Unresolved requirement: Require-Bundle: org.eclipse.userstorage; bundle-version="[1.0.0,2.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.userstorage; bundle-version="1.0.1.v20170201-1648"; singleton:="true"
+       org.eclipse.userstorage [863]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.oomph.setup.sync [osgi.identity; osgi.identity="org.eclipse.oomph.setup.sync"; type="osgi.bundle"; version:Version="1.7.0.v20170201-1631"; singleton:="true"] because it is exposed to package 'org.apache.http' from resources org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"] and org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.oomph.setup.sync [osgi.identity; osgi.identity="org.eclipse.oomph.setup.sync"; type="osgi.bundle"; version:Version="1.7.0.v20170201-1631"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.httpcomponents.httpcore)(&(bundle-version>=4.0.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.apache.httpcomponents.httpcore
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"]
+
+Chain 2:
+  org.eclipse.oomph.setup.sync [osgi.identity; osgi.identity="org.eclipse.oomph.setup.sync"; type="osgi.bundle"; version:Version="1.7.0.v20170201-1631"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.httpcomponents.httpclient)(&(bundle-version>=4.0.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.6.v201511171540"; osgi.wiring.bundle="org.apache.httpcomponents.httpclient"
+  org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.3.6.v201511171540"]
+    import: (&(osgi.wiring.package=org.apache.http.protocol)(version>=4.3.3))
+     |
+    export: osgi.wiring.package: org.apache.http.protocol; uses:=org.apache.http
+    export: osgi.wiring.package=org.apache.http
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1620)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1599)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1571)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1514)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.oomph.setup.ui 4 0 2017-04-27 14:55:30.906
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.oomph.setup.ui [707]
+  Unresolved requirement: Require-Bundle: org.eclipse.oomph.setup.sync; bundle-version="[1.7.0,2.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.oomph.setup.sync; bundle-version="1.7.0.v20170201-1631"; singleton:="true"
+       org.eclipse.oomph.setup.sync [706]
+         Unresolved requirement: Require-Bundle: org.eclipse.userstorage; bundle-version="[1.0.0,2.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.userstorage; bundle-version="1.0.1.v20170201-1648"; singleton:="true"
+              org.eclipse.userstorage [863]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.userstorage.ui; bundle-version="[1.0.0,2.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.userstorage.ui; bundle-version="1.0.1.v20170201-1648"; singleton:="true"
+       org.eclipse.userstorage.ui [864]
+         Unresolved requirement: Require-Bundle: org.eclipse.userstorage; bundle-version="[1.0.0,2.0.0)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.eclipse.userstorage; bundle-version="1.0.1.v20170201-1648"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.userstorage.ui [osgi.identity; osgi.identity="org.eclipse.userstorage.ui"; type="osgi.bundle"; version:Version="1.0.1.v20170201-1648"; singleton:="true"] because it is exposed to package 'org.apache.http' from resources org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"] and org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.userstorage.ui [osgi.identity; osgi.identity="org.eclipse.userstorage.ui"; type="osgi.bundle"; version:Version="1.0.1.v20170201-1648"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.httpcomponents.httpcore)(&(bundle-version>=4.0.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.apache.httpcomponents.httpcore
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"]
+
+Chain 2:
+  org.eclipse.userstorage.ui [osgi.identity; osgi.identity="org.eclipse.userstorage.ui"; type="osgi.bundle"; version:Version="1.0.1.v20170201-1648"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.httpcomponents.httpclient)(&(bundle-version>=4.0.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.6.v201511171540"; osgi.wiring.bundle="org.apache.httpcomponents.httpclient"
+  org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.3.6.v201511171540"]
+    import: (&(osgi.wiring.package=org.apache.http.protocol)(version>=4.3.3))
+     |
+    export: osgi.wiring.package: org.apache.http.protocol; uses:=org.apache.http
+    export: osgi.wiring.package=org.apache.http
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1620)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1599)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1571)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1514)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.oomph.setup.ui.questionnaire 4 0 2017-04-27 14:55:30.918
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.oomph.setup.ui.questionnaire [708]
+  Unresolved requirement: Require-Bundle: org.eclipse.oomph.setup.ui; bundle-version="[1.7.0,2.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.oomph.setup.ui; bundle-version="1.7.0.v20170305-1123"; singleton:="true"
+       org.eclipse.oomph.setup.ui [707]
+         Unresolved requirement: Require-Bundle: org.eclipse.oomph.setup.sync; bundle-version="[1.7.0,2.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.oomph.setup.sync; bundle-version="1.7.0.v20170201-1631"; singleton:="true"
+              org.eclipse.oomph.setup.sync [706]
+                Unresolved requirement: Require-Bundle: org.eclipse.userstorage; bundle-version="[1.0.0,2.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.userstorage; bundle-version="1.0.1.v20170201-1648"; singleton:="true"
+                     org.eclipse.userstorage [863]
+                       No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.userstorage.ui; bundle-version="[1.0.0,2.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.userstorage.ui; bundle-version="1.0.1.v20170201-1648"; singleton:="true"
+              org.eclipse.userstorage.ui [864]
+                Unresolved requirement: Require-Bundle: org.eclipse.userstorage; bundle-version="[1.0.0,2.0.0)"; visibility:="reexport"
+                  -> Bundle-SymbolicName: org.eclipse.userstorage; bundle-version="1.0.1.v20170201-1648"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.userstorage.ui [osgi.identity; osgi.identity="org.eclipse.userstorage.ui"; type="osgi.bundle"; version:Version="1.0.1.v20170201-1648"; singleton:="true"] because it is exposed to package 'org.apache.http' from resources org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"] and org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.userstorage.ui [osgi.identity; osgi.identity="org.eclipse.userstorage.ui"; type="osgi.bundle"; version:Version="1.0.1.v20170201-1648"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.httpcomponents.httpcore)(&(bundle-version>=4.0.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.apache.httpcomponents.httpcore
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"]
+
+Chain 2:
+  org.eclipse.userstorage.ui [osgi.identity; osgi.identity="org.eclipse.userstorage.ui"; type="osgi.bundle"; version:Version="1.0.1.v20170201-1648"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.httpcomponents.httpclient)(&(bundle-version>=4.0.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.6.v201511171540"; osgi.wiring.bundle="org.apache.httpcomponents.httpclient"
+  org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.3.6.v201511171540"]
+    import: (&(osgi.wiring.package=org.apache.http.protocol)(version>=4.3.3))
+     |
+    export: osgi.wiring.package: org.apache.http.protocol; uses:=org.apache.http
+    export: osgi.wiring.package=org.apache.http
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1620)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1599)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1571)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1514)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.apidocs.rcp 4 0 2017-04-27 14:55:30.932
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.apidocs.rcp [745]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.apidocs; bundle-version="[2.4.6,2.4.7]"
+    -> Bundle-SymbolicName: org.eclipse.recommenders.apidocs; bundle-version="2.4.6.v20170307-1041"
+       org.eclipse.recommenders.apidocs [744]
+         Unresolved requirement: Require-Bundle: org.eclipse.recommenders.models; bundle-version="[2.4.6,2.4.7]"
+           -> Bundle-SymbolicName: org.eclipse.recommenders.models; bundle-version="2.4.6.v20170307-1041"
+              org.eclipse.recommenders.models [758]
+                Unresolved requirement: Import-Package: org.eclipse.aether.transport.http; version="[1.0.0,1.1.0)"
+                  -> Export-Package: org.eclipse.aether.transport.http; bundle-symbolic-name="org.eclipse.aether.transport.http"; bundle-version="1.0.1.v20141111"; version="1.0.1.v20141111"; uses:="javax.inject,org.eclipse.aether,org.eclipse.aether.repository,org.eclipse.aether.spi.connector.transport,org.eclipse.aether.spi.locator,org.eclipse.aether.spi.log,org.eclipse.aether.transfer"
+                     org.eclipse.aether.transport.http [107]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.models.rcp; bundle-version="[2.4.6,2.4.7]"
+    -> Bundle-SymbolicName: org.eclipse.recommenders.models.rcp; bundle-version="2.4.6.v20170307-1041"; singleton:="true"
+       org.eclipse.recommenders.models.rcp [759]
+         Unresolved requirement: Require-Bundle: org.eclipse.recommenders.models; bundle-version="[2.4.6,2.4.7]"
+           -> Bundle-SymbolicName: org.eclipse.recommenders.models; bundle-version="2.4.6.v20170307-1041"
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.models; bundle-version="[2.4.6,2.4.7]"
+    -> Bundle-SymbolicName: org.eclipse.recommenders.models; bundle-version="2.4.6.v20170307-1041"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.aether.transport.http [osgi.identity; osgi.identity="org.eclipse.aether.transport.http"; type="osgi.bundle"; version:Version="1.0.1.v20141111"] because it is exposed to package 'org.apache.http' from resources org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"] and org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.aether.transport.http [osgi.identity; osgi.identity="org.eclipse.aether.transport.http"; type="osgi.bundle"; version:Version="1.0.1.v20141111"]
+    import: (&(osgi.wiring.package=org.apache.http)(&(version>=4.2.1)(!(version>=4.4.0))))
+     |
+    export: osgi.wiring.package: org.apache.http
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"]
+
+Chain 2:
+  org.eclipse.aether.transport.http [osgi.identity; osgi.identity="org.eclipse.aether.transport.http"; type="osgi.bundle"; version:Version="1.0.1.v20141111"]
+    import: (&(osgi.wiring.package=org.apache.http.auth)(&(version>=4.2.1)(!(version>=4.4.0))))
+     |
+    export: osgi.wiring.package=org.apache.http.auth; uses:=org.apache.http.protocol
+  org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.3.6.v201511171540"]
+    import: (&(osgi.wiring.package=org.apache.http.protocol)(version>=4.3.3))
+     |
+    export: osgi.wiring.package: org.apache.http.protocol; uses:=org.apache.http
+    export: osgi.wiring.package=org.apache.http
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1620)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1599)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1571)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1514)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.models 4 0 2017-04-27 14:55:30.940
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.models [758]
+  Unresolved requirement: Import-Package: org.eclipse.aether.transport.http; version="[1.0.0,1.1.0)"
+    -> Export-Package: org.eclipse.aether.transport.http; bundle-symbolic-name="org.eclipse.aether.transport.http"; bundle-version="1.0.1.v20141111"; version="1.0.1.v20141111"; uses:="javax.inject,org.eclipse.aether,org.eclipse.aether.repository,org.eclipse.aether.spi.connector.transport,org.eclipse.aether.spi.locator,org.eclipse.aether.spi.log,org.eclipse.aether.transfer"
+       org.eclipse.aether.transport.http [107]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.aether.transport.http [osgi.identity; osgi.identity="org.eclipse.aether.transport.http"; type="osgi.bundle"; version:Version="1.0.1.v20141111"] because it is exposed to package 'org.apache.http' from resources org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"] and org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.aether.transport.http [osgi.identity; osgi.identity="org.eclipse.aether.transport.http"; type="osgi.bundle"; version:Version="1.0.1.v20141111"]
+    import: (&(osgi.wiring.package=org.apache.http)(&(version>=4.2.1)(!(version>=4.4.0))))
+     |
+    export: osgi.wiring.package: org.apache.http
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"]
+
+Chain 2:
+  org.eclipse.aether.transport.http [osgi.identity; osgi.identity="org.eclipse.aether.transport.http"; type="osgi.bundle"; version:Version="1.0.1.v20141111"]
+    import: (&(osgi.wiring.package=org.apache.http.auth)(&(version>=4.2.1)(!(version>=4.4.0))))
+     |
+    export: osgi.wiring.package=org.apache.http.auth; uses:=org.apache.http.protocol
+  org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.3.6.v201511171540"]
+    import: (&(osgi.wiring.package=org.apache.http.protocol)(version>=4.3.3))
+     |
+    export: osgi.wiring.package: org.apache.http.protocol; uses:=org.apache.http
+    export: osgi.wiring.package=org.apache.http
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1620)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1599)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1571)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1514)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.snipmatch.rcp 4 0 2017-04-27 14:55:30.960
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.snipmatch.rcp [766]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.models.rcp; bundle-version="[2.4.6,2.4.7]"
+    -> Bundle-SymbolicName: org.eclipse.recommenders.models.rcp; bundle-version="2.4.6.v20170307-1041"; singleton:="true"
+       org.eclipse.recommenders.models.rcp [759]
+         Unresolved requirement: Require-Bundle: org.eclipse.recommenders.models; bundle-version="[2.4.6,2.4.7]"
+           -> Bundle-SymbolicName: org.eclipse.recommenders.models; bundle-version="2.4.6.v20170307-1041"
+              org.eclipse.recommenders.models [758]
+                Unresolved requirement: Import-Package: org.eclipse.aether.transport.http; version="[1.0.0,1.1.0)"
+                  -> Export-Package: org.eclipse.aether.transport.http; bundle-symbolic-name="org.eclipse.aether.transport.http"; bundle-version="1.0.1.v20141111"; version="1.0.1.v20141111"; uses:="javax.inject,org.eclipse.aether,org.eclipse.aether.repository,org.eclipse.aether.spi.connector.transport,org.eclipse.aether.spi.locator,org.eclipse.aether.spi.log,org.eclipse.aether.transfer"
+                     org.eclipse.aether.transport.http [107]
+                       No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.aether.transport.http [osgi.identity; osgi.identity="org.eclipse.aether.transport.http"; type="osgi.bundle"; version:Version="1.0.1.v20141111"] because it is exposed to package 'org.apache.http' from resources org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"] and org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.aether.transport.http [osgi.identity; osgi.identity="org.eclipse.aether.transport.http"; type="osgi.bundle"; version:Version="1.0.1.v20141111"]
+    import: (&(osgi.wiring.package=org.apache.http)(&(version>=4.2.1)(!(version>=4.4.0))))
+     |
+    export: osgi.wiring.package: org.apache.http
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"]
+
+Chain 2:
+  org.eclipse.aether.transport.http [osgi.identity; osgi.identity="org.eclipse.aether.transport.http"; type="osgi.bundle"; version:Version="1.0.1.v20141111"]
+    import: (&(osgi.wiring.package=org.apache.http.auth)(&(version>=4.2.1)(!(version>=4.4.0))))
+     |
+    export: osgi.wiring.package=org.apache.http.auth; uses:=org.apache.http.protocol
+  org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.3.6.v201511171540"]
+    import: (&(osgi.wiring.package=org.apache.http.protocol)(version>=4.3.3))
+     |
+    export: osgi.wiring.package: org.apache.http.protocol; uses:=org.apache.http
+    export: osgi.wiring.package=org.apache.http
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1620)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1599)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1571)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1514)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.userstorage 4 0 2017-04-27 14:55:40.885
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.userstorage [863]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.userstorage [osgi.identity; osgi.identity="org.eclipse.userstorage"; type="osgi.bundle"; version:Version="1.0.1.v20170201-1648"; singleton:="true"] because it is exposed to package 'org.apache.http' from resources org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"] and org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.userstorage [osgi.identity; osgi.identity="org.eclipse.userstorage"; type="osgi.bundle"; version:Version="1.0.1.v20170201-1648"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.httpcomponents.httpcore)(&(bundle-version>=4.0.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.apache.httpcomponents.httpcore
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"]
+
+Chain 2:
+  org.eclipse.userstorage [osgi.identity; osgi.identity="org.eclipse.userstorage"; type="osgi.bundle"; version:Version="1.0.1.v20170201-1648"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.httpcomponents.httpclient)(&(bundle-version>=4.0.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.6.v201511171540"; osgi.wiring.bundle="org.apache.httpcomponents.httpclient"
+  org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.3.6.v201511171540"]
+    import: (&(osgi.wiring.package=org.apache.http.protocol)(version>=4.3.3))
+     |
+    export: osgi.wiring.package: org.apache.http.protocol; uses:=org.apache.http
+    export: osgi.wiring.package=org.apache.http
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1620)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1599)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1571)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1514)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.userstorage.ui 4 0 2017-04-27 14:55:40.972
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.userstorage.ui [864]
+  Unresolved requirement: Require-Bundle: org.eclipse.userstorage; bundle-version="[1.0.0,2.0.0)"; visibility:="reexport"
+    -> Bundle-SymbolicName: org.eclipse.userstorage; bundle-version="1.0.1.v20170201-1648"; singleton:="true"
+       org.eclipse.userstorage [863]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.userstorage.ui [osgi.identity; osgi.identity="org.eclipse.userstorage.ui"; type="osgi.bundle"; version:Version="1.0.1.v20170201-1648"; singleton:="true"] because it is exposed to package 'org.apache.http' from resources org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"] and org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.userstorage.ui [osgi.identity; osgi.identity="org.eclipse.userstorage.ui"; type="osgi.bundle"; version:Version="1.0.1.v20170201-1648"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.httpcomponents.httpcore)(&(bundle-version>=4.0.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.apache.httpcomponents.httpcore
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.3.3.v201411290715"]
+
+Chain 2:
+  org.eclipse.userstorage.ui [osgi.identity; osgi.identity="org.eclipse.userstorage.ui"; type="osgi.bundle"; version:Version="1.0.1.v20170201-1648"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.httpcomponents.httpclient)(&(bundle-version>=4.0.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.6.v201511171540"; osgi.wiring.bundle="org.apache.httpcomponents.httpclient"
+  org.apache.httpcomponents.httpclient [osgi.identity; osgi.identity="org.apache.httpcomponents.httpclient"; type="osgi.bundle"; version:Version="4.3.6.v201511171540"]
+    import: (&(osgi.wiring.package=org.apache.http.protocol)(version>=4.3.3))
+     |
+    export: osgi.wiring.package: org.apache.http.protocol; uses:=org.apache.http
+    export: osgi.wiring.package=org.apache.http
+  org.apache.httpcomponents.httpcore [osgi.identity; osgi.identity="org.apache.httpcomponents.httpcore"; type="osgi.bundle"; version:Version="4.4.4.v20161115-1643"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1620)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1599)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1571)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1514)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-04-27 14:56:37.103
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Jordane'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-27 15:00:34.316
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-27 15:00:34.324
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'

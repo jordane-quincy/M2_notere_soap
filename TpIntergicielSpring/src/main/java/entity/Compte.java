@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * Classe abstraite représentant un compte.
  */
@@ -17,7 +19,9 @@ public abstract class Compte {
 	@GeneratedValue
 	private long id;
 	@ManyToOne
+	@JsonIgnore
 	private User client;
+	@JsonIgnore
 	private BigDecimal solde;
 
 	public Compte() {
@@ -36,11 +40,11 @@ public abstract class Compte {
 	}
 
 	public long getId() {
-		return id;
+		return this.id;
 	}
 
 	public BigDecimal getSolde() {
-		return solde;
+		return this.solde;
 	}
 
 	public void setSolde(BigDecimal solde) {
@@ -48,11 +52,11 @@ public abstract class Compte {
 	}
 
 	public BigDecimal credit(BigDecimal montantACrediter) {
-		setSolde(solde.add(montantACrediter));
-		return solde;
+		setSolde(this.solde.add(montantACrediter));
+		return this.solde;
 	}
 
 	public User getClient() {
-		return client;
+		return this.client;
 	}
 }

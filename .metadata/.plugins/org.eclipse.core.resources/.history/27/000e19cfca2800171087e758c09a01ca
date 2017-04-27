@@ -1,0 +1,26 @@
+package run;
+
+public class RetourWS {
+	
+	private final String idCompte;
+	private final String typeOperation;
+    private final String montant;
+    
+    public RetourWS(String idCompte, String typeOperation, String montant) {
+		super();
+		this.idCompte = idCompte;
+		this.typeOperation = typeOperation;
+		this.montant = montant;
+	}
+    
+	public String getIdCompte() {
+		return idCompte;
+	}
+	public String getTypeOperation() {
+		return typeOperation;
+	}
+	public String getMontant() {
+		return montant;
+	}
+
+}

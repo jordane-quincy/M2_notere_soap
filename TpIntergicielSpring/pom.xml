@@ -55,7 +55,10 @@
       		<version>2.3.4</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
 
-
+		<dependency>
+		        <groupId>com.fasterxml.jackson.dataformat</groupId>
+		        <artifactId>jackson-dataformat-xml</artifactId>
+		</dependency>
 
 
 

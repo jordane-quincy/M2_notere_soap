@@ -5,6 +5,14 @@
   <import namespace="http://com.github.jordane_quincy" schemaLocation="bankserviceimpl_schema1.xsd"/>
 </schema>
   </wsdl:types>
+  <wsdl:message name="debit">
+    <wsdl:part name="parameters" element="tns:debit">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="debitResponse">
+    <wsdl:part name="parameters" element="tns:debitResponse">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="toPrint">
     <wsdl:part name="parameters" element="tns:toPrint">
     </wsdl:part>
@@ -14,6 +22,12 @@
     </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="BankServiceItf">
+    <wsdl:operation name="debit">
+      <wsdl:input name="debit" message="tns:debit">
+    </wsdl:input>
+      <wsdl:output name="debitResponse" message="tns:debitResponse">
+    </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="toPrint">
       <wsdl:input name="toPrint" message="tns:toPrint">
     </wsdl:input>
@@ -23,6 +37,15 @@
   </wsdl:portType>
   <wsdl:binding name="BankServiceSoapBinding" type="tns:BankServiceItf">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="debit">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="debit">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="debitResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="toPrint">
       <soap:operation soapAction="" style="document"/>
       <wsdl:input name="toPrint">

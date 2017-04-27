@@ -1,0 +1,30 @@
+package com.github.jordane_quincy;
+
+import javax.jws.WebService;
+
+@WebService(targetNamespace = "http://com.github.jordane_quincy",
+endpointInterface = "com.github.jordane_quincy.BankServiceItf",
+portName = "BankServiceItf",
+serviceName = "BankService"
+	)
+public class BankServiceImpl implements BankServiceItf {
+
+	@Override
+	public String toPrint(String toPrint) {
+		return toPrint;
+	}
+
+	@Override
+	public String debit(String idCompteADebiter, String montant) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String remboursement(String idCompteACrediter, String montant) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}

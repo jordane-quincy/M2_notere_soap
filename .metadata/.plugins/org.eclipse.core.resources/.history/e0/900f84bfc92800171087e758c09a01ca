@@ -1,0 +1,9 @@
+package run;
+
+public class RetourWS {
+
+	private final String idCompte;
+	private final String typeOperation;
+    private final String montant;
+
+}

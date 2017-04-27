@@ -1,0 +1,10 @@
+package com.github.jordane_quincy;
+
+@WebService(targetNamespace = "http://com.github.jordane_quincy",
+	endpointInterface = "com.github.jordane_quincy.BankServiceItf",
+	portName = "BankServiceItf",
+	servicename = "BankService"
+		)
+public interface BankServiceItf {
+
+}

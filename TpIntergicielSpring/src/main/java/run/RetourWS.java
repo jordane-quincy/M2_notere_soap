@@ -1,16 +1,27 @@
 package run;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name="retourWS")
+@XmlRootElement
 public class RetourWS {
 	
-	private final String idCompteDebite;
-	private final String idCompteCredite;
-	private final String typeOperation;
-    private final String montant;
+	String idCompteDebite;
+	String idCompteCredite;
+	String typeOperation;
+    String montant;
     
-    public RetourWS(String idCompteDebite, String idCompteCredite, String typeOperation, String montant) {
+    public RetourWS() {
+    	//avoid : run.RetourWS ne comporte aucun constructeur sans argument par d&eacute;faut.
+		super();
+		this.idCompteDebite = "idCompteDebite";
+		this.idCompteCredite = "idCompteCredite";
+		this.typeOperation = "typeOperation";
+		this.montant = "montant";
+	}
+
+	public RetourWS(String idCompteDebite, String idCompteCredite, String typeOperation, String montant) {
 		super();
 		this.idCompteDebite = idCompteDebite;
 		this.idCompteCredite = idCompteCredite;

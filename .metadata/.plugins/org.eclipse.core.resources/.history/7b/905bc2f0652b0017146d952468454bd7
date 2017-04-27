@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import entity.HistoriqueOperations;
 
-public class MainJson {
+public class MainXml {
 
 	public static void main(String[] args) throws JAXBException, IOException {
 		// ou "http://localhost:8080/infos?username=oR"

@@ -41,12 +41,10 @@ public class MainJson {
 			response.append(line).append('\r');
 		}
 		connection.disconnect();
-		response = new StringBuffer(
-				"{\"id\":1,\"compte\":{\"id\":3},\"dateOperation\":\"2017-04-27\",\"operation\":\"DEBIT\",\"montant\":2.00}");
 		System.out.println("response :" + response.toString());
 
 		Map<String, Object> properties = new HashMap<String, Object>();
-		properties.put("eclipselink.media - type", MediaType.APPLICATION_JSON_VALUE);
+		properties.put("eclipselink.media - type", "application/json");
 		properties.put(MarshallerProperties.JSON_INCLUDE_ROOT, false);
 
 		JAXBContext ctx = JAXBContextFactory.createContext(new Class[] { HistoriqueOperations.class }, properties);

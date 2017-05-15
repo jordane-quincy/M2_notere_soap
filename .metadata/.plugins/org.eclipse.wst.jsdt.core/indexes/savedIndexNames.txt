@@ -1,7 +1,0 @@
-INDEX VERSION 1.3+C:\Users\Jordane\Documents\GitHub\M2_notere_soap\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1674273018.index
-2243032657.index
-3082406549.index
-2520210907.index
-2276440483.index
-4126133870.index

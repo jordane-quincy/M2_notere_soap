@@ -1,8 +1,11 @@
 package run;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+@XmlRootElement(name = "RetourWS")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class RetourWS {
 
 	String idCompteDebite;
@@ -38,6 +41,12 @@ public class RetourWS {
 
 	public String getMontant() {
 		return this.montant;
+	}
+
+	@Override
+	public String toString() {
+		return "RetourWS [idCompteDebite=" + this.idCompteDebite + ", idCompteCredite=" + this.idCompteCredite
+				+ ", typeOperation=" + this.typeOperation + ", montant=" + this.montant + "]";
 	}
 
 }

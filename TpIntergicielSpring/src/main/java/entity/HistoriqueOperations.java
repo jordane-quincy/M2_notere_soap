@@ -21,6 +21,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  */
 @Entity
 @XmlRootElement
+// @XmlRootElement(name = "HistoriqueOperations")
+// @XmlAccessorType(XmlAccessType.FIELD)
 public class HistoriqueOperations {
 
 	@Id

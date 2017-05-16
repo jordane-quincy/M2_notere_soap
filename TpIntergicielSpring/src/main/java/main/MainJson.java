@@ -4,17 +4,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
-import javax.xml.transform.stream.StreamSource;
 
 import org.eclipse.persistence.jaxb.JAXBContextFactory;
 import org.eclipse.persistence.jaxb.MarshallerProperties;
@@ -41,12 +38,12 @@ public class MainJson {
 			response.append(line).append('\r');
 		}
 		connection.disconnect();
-		response = new StringBuffer(
-				"{\"id\":1,\"compte\":{\"id\":3},\"dateOperation\":\"2017-04-27\",\"operation\":\"DEBIT\",\"montant\":2.00}");
+		// response = new StringBuffer(
+		// "{\"id\":1,\"compte\":{\"id\":3},\"dateOperation\":\"2017-04-27\",\"operation\":\"DEBIT\",\"montant\":2.00}");
 		System.out.println("response :" + response.toString());
 
 		Map<String, Object> properties = new HashMap<String, Object>();
-		properties.put("eclipselink.media - type", MediaType.APPLICATION_JSON_VALUE);
+		properties.put("eclipselink.media-type", MediaType.APPLICATION_JSON_VALUE);
 		properties.put(MarshallerProperties.JSON_INCLUDE_ROOT, false);
 
 		JAXBContext ctx = JAXBContextFactory.createContext(new Class[] { HistoriqueOperations.class }, properties);
@@ -56,15 +53,30 @@ public class MainJson {
 		// List<HistoriqueOperations> lstHisto = (List<HistoriqueOperations>)
 		// jsonUnmarshaller
 		// .unmarshal(jsonStream2, HistoriqueOperations.class).getValue();
-		@SuppressWarnings("unchecked")
-		List<HistoriqueOperations> lstHisto = (List<HistoriqueOperations>) jsonUnmarshaller
-				.unmarshal(new StreamSource(new StringReader(response.toString())));
+
+		// @SuppressWarnings("unchecked")
+		// List<HistoriqueOperations> lstHisto = (List<HistoriqueOperations>)
+		// jsonUnmarshaller
+		// .unmarshal(new StreamSource(new StringReader(response.toString())));
+
+		// try {
+		// XMLInputFactory xmlif = XMLInputFactory.newInstance();
+		//
+		// XMLEventReader xmlEventReader = xmlif.createXMLEventReader(new
+		// StringReader(response.toString()));
+		// List<HistoriqueOperations> lstHisto = (List<HistoriqueOperations>)
+		// jsonUnmarshaller
+		// .unmarshal(xmlEventReader);
+		// for (HistoriqueOperations historique : lstHisto) {
+		// System.out.println(historique);
+		// }
+		// } catch (XMLStreamException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
 
 		// connection.disconnect();
 
-		for (HistoriqueOperations historique : lstHisto) {
-			System.out.println(historique);
-		}
 	}
 
 }

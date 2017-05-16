@@ -32,7 +32,8 @@ SELECT * FROM "PUBLIC"."USER"
 #Tomcat / SpringBoot
 Au @PostConstruct, la bdd hsqldb est (ré)initialisé :
 
-#Acces :
+#Lancement et acces :
+C:\Users\Jordane\Documents\GitHub\M2_notere_soap\TpIntergicielSpring\src\main\java\run\Application.java
 http://localhost:8080/
 
 #Utilisateurs et comptes :

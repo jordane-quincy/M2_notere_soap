@@ -60,8 +60,9 @@ Client :
 C:\Users\Jordane\Documents\GitHub\M2_notere_soap\m2_notere_soap\src\jordane_quincy\github\com\BankServiceItf_BankServiceItf_Client.java
 
 #REST
-Client Json :
-C:\Users\Jordane\Documents\GitHub\M2_notere_soap\TpIntergicielSpring\src\main\java\main\MainJson.java
 Client XML :
 C:\Users\Jordane\Documents\GitHub\M2_notere_soap\TpIntergicielSpring\src\main\java\main\MainXml.java
+Client Json (après avoir fait une action, par exemple via le client xml) :
+Client Json :
+C:\Users\Jordane\Documents\GitHub\M2_notere_soap\TpIntergicielSpring\src\main\java\main\MainJson.java
 

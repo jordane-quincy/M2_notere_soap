@@ -4,14 +4,17 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.transform.stream.StreamSource;
 
 import org.eclipse.persistence.jaxb.JAXBContextFactory;
 import org.eclipse.persistence.jaxb.MarshallerProperties;
@@ -46,8 +49,9 @@ public class MainJson {
 		properties.put("eclipselink.media-type", MediaType.APPLICATION_JSON_VALUE);
 		properties.put(MarshallerProperties.JSON_INCLUDE_ROOT, false);
 
-		JAXBContext ctx = JAXBContextFactory.createContext(new Class[] { HistoriqueOperations.class }, properties);
-		Unmarshaller jsonUnmarshaller = ctx.createUnmarshaller();
+		// JAXBContext ctx = JAXBContextFactory.createContext(new Class[] {
+		// HistoriqueOperations.class }, properties);
+		// Unmarshaller jsonUnmarshaller = ctx.createUnmarshaller();
 		// StreamSource jsonStream2 = new
 		// StreamSource(connection.getInputStream());
 		// List<HistoriqueOperations> lstHisto = (List<HistoriqueOperations>)
@@ -76,6 +80,14 @@ public class MainJson {
 		// }
 
 		// connection.disconnect();
+
+		JAXBContext ctx = JAXBContextFactory.createContext(new Class[] { List.class }, properties);
+		Unmarshaller jsonUnmarshaller = ctx.createUnmarshaller();
+		@SuppressWarnings("unchecked")
+		List<HistoriqueOperations> lstOpe = (List<HistoriqueOperations>) jsonUnmarshaller
+				.unmarshal(new StreamSource(new StringReader(response.toString())));
+
+		System.out.println("lstOpe : " + lstOpe);
 
 	}
 

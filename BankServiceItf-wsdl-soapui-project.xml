@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="62e9ef4c-227d-4092-9255-6899d3c01b5f" activeEnvironment="Default" name="BankServiceItf?wsdl" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="8b45bd0f-4577-4112-b893-4553a8fc87b5" wsaVersion="NONE" name="BankServiceSoapBinding" type="wsdl" bindingName="{http://com.github.jordane_quincy}BankServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8088/m2_notere_soap/services/BankServiceItf?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8088/m2_notere_soap/services/BankServiceItf?wsdl"><con:part><con:url>http://localhost:8088/m2_notere_soap/services/BankServiceItf?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="BankService" targetNamespace="http://com.github.jordane_quincy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://com.github.jordane_quincy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://com.github.jordane_quincy" schemaLocation="http://localhost:8088/m2_notere_soap/services/BankServiceItf?xsd=bankserviceimpl_schema1.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="debit">
+    <wsdl:part element="tns:debit" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="remboursement">
+    <wsdl:part element="tns:remboursement" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="debitResponse">
+    <wsdl:part element="tns:debitResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="toPrint">
+    <wsdl:part element="tns:toPrint" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="remboursementResponse">
+    <wsdl:part element="tns:remboursementResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="toPrintResponse">
+    <wsdl:part element="tns:toPrintResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="BankServiceItf">
+    <wsdl:operation name="debit">
+      <wsdl:input message="tns:debit" name="debit"></wsdl:input>
+      <wsdl:output message="tns:debitResponse" name="debitResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="remboursement">
+      <wsdl:input message="tns:remboursement" name="remboursement"></wsdl:input>
+      <wsdl:output message="tns:remboursementResponse" name="remboursementResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="toPrint">
+      <wsdl:input message="tns:toPrint" name="toPrint"></wsdl:input>
+      <wsdl:output message="tns:toPrintResponse" name="toPrintResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BankServiceSoapBinding" type="tns:BankServiceItf">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="debit">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="debit">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="debitResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="remboursement">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="remboursement">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="remboursementResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="toPrint">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="toPrint">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="toPrintResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BankService">
+    <wsdl:port binding="tns:BankServiceSoapBinding" name="BankServiceItf">
+      <soap:address location="http://localhost:8088/m2_notere_soap/services/BankServiceItf"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8088/m2_notere_soap/services/BankServiceItf?xsd=bankserviceimpl_schema1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="unqualified" targetNamespace="http://com.github.jordane_quincy" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://com.github.jordane_quincy">
+  <xs:element name="debit" type="tns:debit"/>
+  <xs:element name="debitResponse" type="tns:debitResponse"/>
+  <xs:element name="remboursement" type="tns:remboursement"/>
+  <xs:element name="remboursementResponse" type="tns:remboursementResponse"/>
+  <xs:element name="toPrint" type="tns:toPrint"/>
+  <xs:element name="toPrintResponse" type="tns:toPrintResponse"/>
+  <xs:complexType name="debit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idCompteADebiter" type="xs:string"/>
+      <xs:element minOccurs="0" name="montant" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="debitResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="remboursement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idCompteACrediter" type="xs:string"/>
+      <xs:element minOccurs="0" name="montant" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="remboursementResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="toPrint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="toPrint" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="toPrintResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8088/m2_notere_soap/services/BankServiceItf</con:endpoint></con:endpoints><con:operation id="aa2f6d87-3ec4-44b7-9dc5-ac52fe020afb" isOneWay="false" action="" name="debit" bindingOperationName="debit" type="Request-Response" outputName="debitResponse" inputName="debit" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="30bd0a69-7fdd-43eb-b67c-525dbaa7ddee" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/m2_notere_soap/services/BankServiceItf</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com.github.jordane_quincy">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:debit>\r
+         <!--Optional:-->\r
+         <idCompteADebiter>2</idCompteADebiter>\r
+         <!--Optional:-->\r
+         <montant>10</montant>\r
+      </com:debit>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://com.github.jordane_quincy/BankServiceItf/debit"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b1fba70e-3fc2-4e3d-9cd1-0959d0bbad3c" isOneWay="false" action="" name="remboursement" bindingOperationName="remboursement" type="Request-Response" outputName="remboursementResponse" inputName="remboursement" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2f88d423-f5e9-4b16-a985-cdcdf0134273" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/m2_notere_soap/services/BankServiceItf</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com.github.jordane_quincy">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:remboursement>\r
+         <!--Optional:-->\r
+         <idCompteACrediter>2</idCompteACrediter>\r
+         <!--Optional:-->\r
+         <montant>5</montant>\r
+      </com:remboursement>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://com.github.jordane_quincy/BankServiceItf/remboursement"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8b63a1ee-b145-4f59-a438-d66ce06e63c0" isOneWay="false" action="" name="toPrint" bindingOperationName="toPrint" type="Request-Response" outputName="toPrintResponse" inputName="toPrint" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="354a6a8e-3ecc-4883-8df8-0b0f0109c17e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/m2_notere_soap/services/BankServiceItf</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com.github.jordane_quincy">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:toPrint>\r
+         <!--Optional:-->\r
+         <toPrint>gg</toPrint>\r
+      </com:toPrint>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://com.github.jordane_quincy/BankServiceItf/toPrint"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

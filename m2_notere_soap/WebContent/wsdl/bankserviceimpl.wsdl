@@ -9,12 +9,20 @@
     <wsdl:part name="parameters" element="tns:debit">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="remboursement">
+    <wsdl:part name="parameters" element="tns:remboursement">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="debitResponse">
     <wsdl:part name="parameters" element="tns:debitResponse">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="toPrint">
     <wsdl:part name="parameters" element="tns:toPrint">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="remboursementResponse">
+    <wsdl:part name="parameters" element="tns:remboursementResponse">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="toPrintResponse">
@@ -26,6 +34,12 @@
       <wsdl:input name="debit" message="tns:debit">
     </wsdl:input>
       <wsdl:output name="debitResponse" message="tns:debitResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="remboursement">
+      <wsdl:input name="remboursement" message="tns:remboursement">
+    </wsdl:input>
+      <wsdl:output name="remboursementResponse" message="tns:remboursementResponse">
     </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="toPrint">
@@ -46,6 +60,15 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="remboursement">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="remboursement">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="remboursementResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="toPrint">
       <soap:operation soapAction="" style="document"/>
       <wsdl:input name="toPrint">
@@ -58,7 +81,7 @@
   </wsdl:binding>
   <wsdl:service name="BankService">
     <wsdl:port name="BankServiceItf" binding="tns:BankServiceSoapBinding">
-      <soap:address location="http://localhost:8080/m2_notere_soap/services/BankServiceItf"/>
+      <soap:address location="http://localhost:8088/m2_notere_soap/services/BankServiceItf"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

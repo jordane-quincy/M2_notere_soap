@@ -1,23 +1,17 @@
 package com.github.jordane_quincy;
 
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 import javax.jws.WebService;
 
-@WebService(targetNamespace = "http://com.github.jordane_quincy",
-endpointInterface = "com.github.jordane_quincy.BankServiceItf",
-portName = "BankServiceItf",
-serviceName = "BankService"
-	)
+@WebService(targetNamespace = "http://com.github.jordane_quincy", endpointInterface = "com.github.jordane_quincy.BankServiceItf", portName = "BankServiceItf", serviceName = "BankService")
 public class BankServiceImpl implements BankServiceItf {
 
-//	private final static String url = "http://localhost:8080/transfert";
-	
+	private final static String BASE_URL = "http://localhost:8080/transfert";
+
 	@Override
 	public String toPrint(String toPrint) {
 		return toPrint;
@@ -25,60 +19,57 @@ public class BankServiceImpl implements BankServiceItf {
 
 	@Override
 	public String debit(String idCompteADebiter, String montant) {
-		String urlParameters =
-		        "idCompteADebiter=" + idCompteADebiter +
-		        "&idCompteACrediter=" + "1" +
-		        "&montant=" + montant;
+		String urlParameters = "?idCompteADebiter=" + idCompteADebiter + "&idCompteACrediter=" + "1" + "&montant="
+				+ montant;
 
-		return BankServiceImpl.executeGet("http://localhost:8080/transfert", urlParameters);
+		return BankServiceImpl.executeGet(BASE_URL + urlParameters);
 	}
 
-//	@Override
-//	public String remboursement(String idCompteACrediter, String montant) {
-//		return null;
-//	}
+	@Override
+	public String remboursement(String idCompteACrediter, String montant) {
+		String urlParameters = "?idCompteADebiter=" + "1" + "&idCompteACrediter=" + idCompteACrediter + "&montant="
+				+ montant;
 
-	private static String executeGet(String targetURL, String urlParameters) {
-		  HttpURLConnection connection = null;
+		return BankServiceImpl.executeGet(BASE_URL + urlParameters);
+	}
 
-		  try {
-		    //Create connection
-		    URL url = new URL(targetURL);
-		    connection = (HttpURLConnection) url.openConnection();
-		    connection.setRequestMethod("GET");
-		    connection.setRequestProperty("Content-Type", 
-		        "application/x-www-form-urlencoded");
+	private static String executeGet(String targetURL) {
+		String retour = "";
 
-		    connection.setRequestProperty("Content-Length", 
-		        Integer.toString(urlParameters.getBytes().length));
+		HttpURLConnection con = null;
+		try {
+			URL obj = new URL(targetURL);
 
-		    connection.setUseCaches(false);
-		    connection.setDoOutput(true);
+			con = (HttpURLConnection) obj.openConnection();
 
-		    //Send request
-		    DataOutputStream wr = new DataOutputStream (
-		        connection.getOutputStream());
-		    wr.writeBytes(urlParameters);
-		    wr.close();
+			// optional default is GET
+			con.setRequestMethod("GET");
 
-		    //Get Response  
-		    InputStream is = connection.getInputStream();
-		    BufferedReader rd = new BufferedReader(new InputStreamReader(is));
-		    StringBuffer response = new StringBuffer();
-		    String line;
-		    while ((line = rd.readLine()) != null) {
-		      response.append(line);
-		      response.append('\r');
-		    }
-		    rd.close();
-		    return response.toString();
-		  } catch (Exception e) {
-		    e.printStackTrace();
-		    return null;
-		  } finally {
-		    if (connection != null) {
-		      connection.disconnect();
-		    }
-		  }
+			int responseCode = con.getResponseCode();
+			System.out.println("\nSending 'GET' request to URL : " + targetURL);
+			System.out.println("Response Code : " + responseCode);
+
+			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+
+			while ((inputLine = in.readLine()) != null) {
+				response.append(inputLine);
+			}
+			in.close();
+
+			retour = response.toString();
+
+		} catch (Exception e) {
+			// FIXME : Pokémon exception : catch them all
+			e.printStackTrace();
+		} finally {
+			if (con != null) {
+				con.disconnect();
+			}
+		}
+
+		return retour;
+
 	}
 }
